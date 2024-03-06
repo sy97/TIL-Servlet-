@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1>성적 처리 프로그램</h1>
-	<form action="/ServletTest/sungjuk" method="get">
+	<form action="/ServletTest/sungjuk" method="get" onsubmit="return nulltest()">
 		<!-- 반드시 입력해야만 넘어가게하는거. required="required" -->
 		국어 : <input type="text" name="kor" /><br><br>
 		영어 : <input type="text" name="eng" /><br><br>
@@ -16,7 +16,7 @@
 		<!-- 서버로 보낼 때는 반드시 이름이 있어야함. -->
 		<input type="radio" name="calc" value="tot" checked="checked"> 총점 &nbsp;&nbsp;&nbsp;&nbsp;
 		<input type="radio" name="calc" value="avg"> 평균 &nbsp;&nbsp;&nbsp;&nbsp;
-		<input type="submit" value="전송" onsubmit="nulltest()"/>
+		<input type="submit" value="전송" />
 	</form>
 	
 	<script src="test2.js"></script>
