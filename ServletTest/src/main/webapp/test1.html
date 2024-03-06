@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- url패턴에 적은 이름으로 바꿔줘야함. 프로젝트명/서블릿주소 -->
+	<form action="/ServletTest/test1">
+	<!-- 앞에 http://localhost:8080은 생략가능 -->
+			이름: <input type="text" name="name"/><br/><br/>
+			주소: <input type="text" name="addr"/><br/><br/>
+			<input type = "submit" value ="전송" />
+	</form>
+	
+	<br/><br/>
+	
+	<form action="/ServletTest/test1" method="POST">
+			이름: <input type="text" name="name"/><br/><br/>
+			주소: <input type="text" name="addr"/><br/><br/>
+			<input type = "submit" value ="전송" />
+	</form>
+		
+</body>
+</html>
