@@ -13,9 +13,28 @@
 			<li><input type="text" name="singer"/></li>
 			<li><input type="text" name="singer"/></li>
 			<li><input type="text" name="singer"/></li>
+			
+		<!-- text타입은 null값이어도 오류가 나지않고 공백도 하나의 문자열로 넘어가게됨. -->	
 		</ul>
 		<br><br>
+		<h2>좋아하는 음식을 선택해 주세요.</h2>
+		<input type="checkbox" name="food" value="짜장면"/> 짜장면<br>
+		<input type="checkbox" name="food" value="쫄면"/> 쫄면<br>
+		<input type="checkbox" name="food" value="탕수육"/> 탕수육<br>
+		<input type="checkbox" name="food" value="마라탕"/> 마라탕<br>
+		<br><br>
 		
+		<!-- 셀렉트는 하나만 선택 가능한데, multiple써주면 다중선택가능. size="몇개보일지" -->
+		<!-- ctrl키 누르면 다중선택 가능. -->
+		<br><br>
+		<h2>좋아하는 도시를 선택해 주세요.</h2>
+		<select name="city" multiple="multiple" size="4">
+			<option>서울</option>
+			<option>파리</option>
+			<option>런던</option>
+			<option>헬싱키</option>
+		</select>
+				
 		<input type="submit" value="전송"/>
 	</form>
 </body>
