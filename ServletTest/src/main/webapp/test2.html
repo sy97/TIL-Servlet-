@@ -7,8 +7,12 @@
 </head>
 <body>
 	<h1>성적 처리 프로그램</h1>
-	<form action="/ServletTest/sungjuk" method="get" onsubmit="return nulltest()">
-		<!-- 반드시 입력해야만 넘어가게하는거. required="required" -->
+	
+	<!-- onsubmit은 서버로 제출할 때라는 이벤트이므로 form에서만 사용가능. 
+	onsubmit이 true일 때만 보내짐. onsubmit=true면 그냥 무조건 제출.-->
+	<form action="/ServletTest/sungjuk" method="get" onSubmit="return nullCheck()">
+		
+		<!-- 반드시 입력해야만 넘어가게하는거. required="required" 나는 자바스크립트로 함. -->
 		국어 : <input type="text" name="kor" /><br><br>
 		영어 : <input type="text" name="eng" /><br><br>
 		수학 : <input type="text" name="math" /><br><br>
