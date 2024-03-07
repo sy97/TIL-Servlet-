@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +16,7 @@ public class Test3Servlet extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html;charset=UTF-8");
 		
+		/*
 		//singer라는 name을 가진 값이 여러개이므로, 배열로 받아올 수 있는 getParameterValues써야함.
 		String[] singers = req.getParameterValues("singer");
 		//실제로 코드를 짤 때는 중간중간 테스트 하는것이 좋다.
@@ -61,7 +63,32 @@ public class Test3Servlet extends HttpServlet {
 		
 		out.println("</body></html>");
 		out.close();
+		*/
 		
+		PrintWriter out = resp.getWriter();
+		out.println("<html><body>");
+		//변수 줄세우기
+		Enumeration<String> en = req.getParameterNames();//singer, food, city라는 변수를 가져오는것.
+		//줄세운 변수를 꺼내오기
+		while(en.hasMoreElements()) {
+			//처음에는 singer가 들어감.
+			String name = en.nextElement();
+			//하나라도 선택이 되어있는 경우에만 처리가 될 수 있게
+			if(name != null) {
+				//처음에는 singer가 들어가게됨.
+				String[] values = req.getParameterValues(name);
+				out.println("당신이 선택한 " + name + "은 다음과 같습니다.");
+				out.println("<ul>");
+				for(String s : values) {
+					out.println("<li>"+ s +"</li>");
+				}
+				
+				out.println("</ul>");
+			}
+		}
+		
+		out.println("</body></html>");
+		out.close();
 	}
 	
 }
