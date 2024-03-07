@@ -13,7 +13,7 @@ public class Test4Servlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html;charset=UTF-8");
-		
+	
 		PrintWriter out = resp.getWriter();
 		out.println("<html><body>");
 		
@@ -21,16 +21,28 @@ public class Test4Servlet extends HttpServlet {
 		Enumeration<String> en = req.getParameterNames();
 		while(en.hasMoreElements()) {
 			String name = en.nextElement();
+			String[] values = req.getParameterValues(name);
 			if(name != null) {
-				String[] values = req.getParameterValues(name);
-				out.println("당신이 선택한 " + name + "은 다음과 같습니다.");
-				out.println("<ul>");
-				for(String s : values) {
-					out.println("<li>"+ s +"</li>");
+				if(name.equals("name")) {
+				 String nameValue = values[0].toUpperCase();
+				 out.println("<ul>");
+				 out.print("사용자의" + name + "은(는) 다음과 같습니다.");
+				 out.println("<li>" + nameValue + "</li>");
+				 out.println("</ul>");
 				}
 				
+				else {
+				out.println("<ul>");
+				out.print("사용자의 " + name + "은(는) 다음과 같습니다.");
+				for(String s : values) {
+					
+					out.println("<li>"+ s +"</li>");
+				}
 				out.println("</ul>");
+				}
+				
 			}
+		
 		}
 		
 		out.println("</body></html>");
