@@ -5,6 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h2>쿠키 사용하기</h2>
 	<form action="/ServletTest2/cook">
 		이름 : <input type="text" name="name" /><br><br>
 		주소 : <input type="text" name="addr" /><br><br>
@@ -13,6 +14,18 @@
 	</form>
 	
 	<br><br>
+	
+	<!-- 이걸 클릭하면 서버가 내 이름과 주소를 잘 기억하고있는지 확인 -->
+	<a href="/ServletTest2/cookConfirm">쿠키 확인하기</a>
+	
+	<hr/>
+	<h2>세션 사용하기</h2>
+		<form action="/ServletTest2/sess">
+		이름 : <input type="text" name="name" /><br><br>
+		주소 : <input type="text" name="addr" /><br><br>
+		<input type="submit" value="전송"/>
+	</form>
+	<a href="/ServletTest2/sessConfirm">세션 확인하기</a>
 	
 </body>
 </html>
